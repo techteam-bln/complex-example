@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://example.org/model/org" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:com="http://example.org/model/common" targetNamespace="http://example.org/model/org" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1" jaxb:version="2.1">
+	<xs:import namespace="http://example.org/model/common" schemaLocation="common.xsd"/>
+	<xs:element name="ORG_COMPOUND">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="ExampleOrgCompound"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="com:COMPOUND_TYPE">
+					<xs:sequence>
+						<xs:element ref="ORG" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="org"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="ORG_TAX_DATA" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="orgTaxData"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="ORG_ADDRESS" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="orgAddress"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ORG">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="ExampleOrg"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="com:ENTITY_TYPE">
+					<xs:sequence>
+						<xs:element name="ORG_PK" type="xs:long" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="orgPk"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ORG_NAME" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="orgName"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ORG_TYPE" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="orgType"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ORG_ADDRESS">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="ExampleOrgAddress"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="com:ENTITY_TYPE">
+					<xs:sequence>
+						<xs:element name="ORG_ADDRESS_PK" type="xs:long" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="orgAddressPk"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="COUNTRY_CODE" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="countryCode"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="POSTAL_CODE" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="postalCode"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CITY" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="city"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="STREET_NAME" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="streetName"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="STREET_NUM" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="streetNum"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ORG_TAX_DATA">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="ExampleOrgTaxData"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="com:ENTITY_TYPE">
+					<xs:sequence>
+						<xs:element name="ORG_TAX_DATA_PK" type="xs:long" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="orgTaxDataPk"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TAX_IDENTIFICATION_NUMBER" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="taxIdentificationNumber"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="LOCAL_TAX_OFFICE" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="localTaxOffice"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

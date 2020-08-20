@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://example.org/model/person" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:com="http://example.org/model/common" targetNamespace="http://example.org/model/person" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1" jaxb:version="2.1">
+	<xs:import namespace="http://example.org/model/common" schemaLocation="common.xsd"/>
+	<xs:element name="PERSON_COMPOUND">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="ExamplePersonCompound"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="com:COMPOUND_TYPE">
+					<xs:sequence>
+						<xs:element ref="PERSON" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="person"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="PERSON_ADDRESS" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="personAddress"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="PERSON_PROFESSION" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="personProfession"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PERSON">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="ExamplePerson"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="com:ENTITY_TYPE">
+					<xs:sequence>
+						<xs:element name="PERSON_PK" type="xs:long" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="personPk"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="LAST_NAME" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="lastName"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="MIDDLE_NAME" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="middleName"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="FIRST_NAME" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="firstName"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="GENDER" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="gender"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="BIRTHDAY" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="birthday"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="DEATHDAY" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="deathday"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PERSON_ADDRESS">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="ExamplePersonAddress"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="com:ENTITY_TYPE">
+					<xs:sequence>
+						<xs:element name="PERSON_ADDRESS_PK" type="xs:long" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="personAddressPk"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="COUNTRY_CODE" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="countryCode"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="POSTAL_CODE" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="postalCode"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CITY" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="city"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="STREET_NAME" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="streetName"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="STREET_NUM" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="streetNum"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PERSON_PROFESSION">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="ExamplePersonProfession"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="com:ENTITY_TYPE">
+					<xs:sequence>
+						<xs:element name="PERSON_PROFESSION_PK" type="xs:long" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="personProfessionPk"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="PROFESSION" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="profession"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="PROMOTION_DATE" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="promotionDate"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TITLE" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:appinfo>
+									<jaxb:property name="title"/>
+								</xs:appinfo>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

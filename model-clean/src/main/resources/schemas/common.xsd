@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://example.org/model/common" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" targetNamespace="http://example.org/model/common" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1" jaxb:version="2.1">
+	<xs:complexType name="COMPOUND_TYPE" abstract="true">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="AbstractCompound"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="ENTITY_TYPE" abstract="true">
+		<xs:annotation>
+			<xs:appinfo>
+				<jaxb:class name="AbstractEntity"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="LAST_CHANGE_DATE" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<jaxb:property name="lastChangeDate"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LAST_CHANGE_USER_ID" type="xs:long" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<jaxb:property name="lastChangeUserId"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
