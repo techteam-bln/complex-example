@@ -17,12 +17,14 @@ public class Org implements ArchaicEntityInterface {
   private Long lastChangeUserId;
 
   public Long getOrgPk() {
-    return orgPk;
+   
+	  
+	  
+	  
+	  return orgPk;
   }
 
-  public void setOrgPk(Long orgPk) {
-    this.orgPk = orgPk;
-  }
+  public void setOrgPk(Long orgPk) {    this.orgPk = orgPk;  }
 
   public String getOrgName() {
     return orgName;
